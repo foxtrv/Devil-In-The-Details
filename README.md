@@ -13,6 +13,6 @@ I then used a Sentiment Analysis API I found at http://text-processing.com to co
 
 # Conclusion
 In conclusion, I found that the Devil is not in the details. 
-(However, Dante's Inferno is written in poem and it's even hard for me to understand the sentiment of what he is saying sometimes lol)
+(However, Dante's Inferno is written in poem and sometimes it's even hard for me to understand the sentiment of what he is saying lol)
 
 

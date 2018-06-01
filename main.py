@@ -1,8 +1,11 @@
-import PyPDF2
-import requests
 import json
+
+import PyPDF2
 import math
+import requests
+
 from FrequencySummarizer import FrequencySummarizer
+
 
 def convertPDFToText(pdf, nameOfOutputFile):
     file = open(pdf, 'rb')
@@ -14,6 +17,7 @@ def convertPDFToText(pdf, nameOfOutputFile):
     file = open(nameOfOutputFile, 'w')
     file.write(text)
     file.close()
+
 
 # using Sentiment Analysis API found at http://text-processing.com
 def sentimentAnalysis(text):
@@ -42,17 +46,17 @@ def summarizeText(text):
     sum = ''
     # summarize text by factor of 10
     # for s in fs.summarize(text, math.ceil(len(text.splitlines())/10)):
-    for s in fs.summarize(text, math.ceil(len(text.splitlines())/10)):
+    for s in fs.summarize(text, math.ceil(len(text.splitlines()) / 10)):
         sum += s
     file = open('out.txt', 'w')
     file.write(sum)
     file.close()
     return sum
 
+
 def main():
     # f = convertPDFToText('Dante-s-Inferno.pdf', 'di.txt') # already ran this, don't need to run it again
     file = open('di.txt', 'r')
-    # file = open('di-7-cantos.txt', 'r')
 
     # sentimentAnalysis API limit is 50,000 characters
     textLimited = ''
@@ -69,10 +73,6 @@ def main():
     print('\nlength of summarized text = ' + str(len(s)) + '\n')
 
     sentimentAnalysis(s)
-
-
-
-
 
 
 if __name__ == "__main__":
